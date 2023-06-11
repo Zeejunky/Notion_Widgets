@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Purple Buttons with Textareas</title>
+    <style>
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .button {
+            background-color: purple;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function copyToClipboard(textareaId) {
+            var copyText = document.getElementById(textareaId);
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /* For mobile devices */
+            document.execCommand("copy");
+            alert("Text copied to clipboard: " + copyText.value);
+        }
+    </script>
+</head>
+<body>
+    <div class="button-container">
+        <div>
+            <button class="button" onclick="copyToClipboard('textarea1')">Button 1</button>
+            <textarea id="textarea1" rows="4" cols="50">Text to be copied from Button 1</textarea>
+        </div>
+        <div>
+            <button class="button" onclick="copyToClipboard('textarea2')">Button 2</button>
+            <textarea id="textarea2" rows="4" cols="50">Text to be copied from Button 2</textarea>
+        </div>
+        <div>
+            <button class="button" onclick="copyToClipboard('textarea3')">Button 3</button>
+            <textarea id="textarea3" rows="4" cols="50">Text to be copied from Button 3</textarea>
+        </div>
+    </div>
+</body>
+</html>
