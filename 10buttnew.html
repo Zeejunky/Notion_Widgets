@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .button {
+            background-color: purple;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 10px;
+            resize: both;
+            overflow: auto;
+            min-width: 100px;
+            min-height: 10px;
+        }
+
+        .button:last-child {
+            margin-right: 0;
+        }
+    </style>
+    <script>
+        function copyToClipboard(textareaId) {
+            var copyText = document.getElementById(textareaId);
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /* For mobile devices */
+            document.execCommand("copy");
+            alert("Text copied to clipboard: " + copyText.value);
+        }
+    </script>
+</head>
+<body>
+    <div class="button-container">
+        <div>
+            <button class="button" onclick="copyToClipboard('textarea1')">Button 1</button>
+            <textarea id="textarea1" rows="4" cols="50" hidden> Button 1</textarea>
+        </div>
+        <div>
+            <button class="button" onclick="copyToClipboard('textarea2')">Button 2</button>
+            <textarea id="textarea2" rows="4" cols="50" hidden>
+Button 2</textarea>
+        </div>
+        <div>
+            <button class="button" onclick="copyToClipboard('textarea3')">Button 3</button>
+            <textarea id="textarea3" rows="4" cols="50" hidden>
+Button 3</textarea>
+        </div>
+              <div>
+            <button class="button" onclick="copyToClipboard('textarea4')">Button 4</button>
+            <textarea id="textarea4" rows="4" cols="50" hidden> Button 4</textarea>
+        </div>
+        <div>
+            <button class="button" onclick="copyToClipboard('textarea5')">Button 5</button>
+            <textarea id="textarea5" rows="4" cols="50" hidden>
+Button 5</textarea>
+        </div>
+        <div>
+            <button class="button" onclick="copyToClipboard('textarea6')">Button 6</button>
+            <textarea id="textarea6" rows="4" cols="50" hidden>
+Button 6</textarea>
+        </div>
+              <div>
+            <button class="button" onclick="copyToClipboard('textarea7')">Button 7</button>
+            <textarea id="textarea7" rows="4" cols="50" hidden> Button 7</textarea>
+        </div>
+        <div>
+            <button class="button" onclick="copyToClipboard('textarea8')">Button 8</button>
+            <textarea id="textarea8" rows="4" cols="50" hidden>
+Button 8</textarea>
+        </div>
+        <div>
+            <button class="button" onclick="copyToClipboard('textarea9')">Button 9</button>
+            <textarea id="textarea9" rows="4" cols="50" hidden>
+Button 9</textarea>
+        </div>
+              <div>
+            <button class="button" onclick="copyToClipboard('textarea10')">Button 10</button>
+            <textarea id="textarea10" rows="4" cols="50" hidden>
+Button 10</textarea>
+        </div>
+    </div>
+</body>
+</html>
