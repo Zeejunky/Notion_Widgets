@@ -1,10 +1,13 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <title>Purple Buttons with Rich Text</title>
     <style>
         .button-container {
             display: flex;
-            justify-content: space-between;
+            flex-direction: right;
+            gap: 10px;
         }
 
         .button {
@@ -13,73 +16,103 @@
             padding: 10px;
             border: none;
             border-radius: 4px;
-            font-size: 16px;
             cursor: pointer;
-            margin-right: 10px;
         }
-
-        .button:last-child {
-            margin-right: 0;
+        
+        .contenteditable-div {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 4px;
+            min-height: 100px;
+            overflow: auto;
         }
     </style>
     <script>
-        function copyToClipboard(textareaId) {
-            var copyText = document.getElementById(textareaId);
-            copyText.select();
-            copyText.setSelectionRange(0, 99999); /* For mobile devices */
+        function copyToClipboard(divId) {
+            var copyText = document.getElementById(divId);
+            var range = document.createRange();
+            range.selectNode(copyText);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
             document.execCommand("copy");
-            alert("Text copied to clipboard: " + copyText.value);
+            window.getSelection().removeAllRanges();
+            alert("Text copied to clipboard: " + copyText.innerText);
         }
     </script>
 </head>
 <body>
     <div class="button-container">
         <div>
-            <button class="button" onclick="copyToClipboard('textarea1')">Button 1</button>
-            <textarea id="textarea1" rows="4" cols="50" hidden> Button 1</textarea>
+            <button class="button" onclick="copyToClipboard('div1')">Button 1</button>
+            <div id="div1" class="contenteditable-div" contenteditable hidden>
+                <p>You indicated in your casting notice that your project is a student film. That&apos;s great - the actors on our site love student films!</p>
+<p>However, to preempt some common questions from actors and make sure you get a good response, can you provide your school name, your school email address and the name of your professor? We can keep this info private, but we need it to verify your account.</p>
+<p>Thanks in advance,</p>
+<p><br></p>
+            </div>
         </div>
         <div>
-            <button class="button" onclick="copyToClipboard('textarea2')">Button 2</button>
-            <textarea id="textarea2" rows="4" cols="50" hidden>
-Button 2</textarea>
+            <button class="button" onclick="copyToClipboard('div2')">Button 2</button>
+            <div id="div2" class="contenteditable-div" contenteditable hidden>
+                <p>&bull; Hello over there</p>
+<p><strong>bdkjfedfkljed</strong></p>
+            </div>
         </div>
         <div>
-            <button class="button" onclick="copyToClipboard('textarea3')">Button 3</button>
-            <textarea id="textarea3" rows="4" cols="50" hidden>
-Button 3</textarea>
-        </div>
-              <div>
-            <button class="button" onclick="copyToClipboard('textarea4')">Button 4</button>
-            <textarea id="textarea4" rows="4" cols="50" hidden> Button 4</textarea>
+            <button class="button" onclick="copyToClipboard('div3')">Button 3</button>
+            <div id="div3" class="contenteditable-div" contenteditable hidden>
+                <p>&bull; Hello over there</p>
+<p><strong>bdkjfedfkljed</strong></p>
+            </div>
         </div>
         <div>
-            <button class="button" onclick="copyToClipboard('textarea5')">Button 5</button>
-            <textarea id="textarea5" rows="4" cols="50" hidden>
-Button 5</textarea>
+            <button class="button" onclick="copyToClipboard('div3')">Button 4</button>
+            <div id="div3" class="contenteditable-div" contenteditable hidden>
+                <p>&bull; Hello over there</p>
+<p><strong>bdkjfedfkljed</strong></p>
+            </div>
         </div>
         <div>
-            <button class="button" onclick="copyToClipboard('textarea6')">Button 6</button>
-            <textarea id="textarea6" rows="4" cols="50" hidden>
-Button 6</textarea>
-        </div>
-              <div>
-            <button class="button" onclick="copyToClipboard('textarea7')">Button 7</button>
-            <textarea id="textarea7" rows="4" cols="50" hidden> Button 7</textarea>
+            <button class="button" onclick="copyToClipboard('div3')">Button 5</button>
+            <div id="div3" class="contenteditable-div" contenteditable hidden>
+                <p>&bull; Hello over there</p>
+<p><strong>bdkjfedfkljed</strong></p>
+            </div>
         </div>
         <div>
-            <button class="button" onclick="copyToClipboard('textarea8')">Button 8</button>
-            <textarea id="textarea8" rows="4" cols="50" hidden>
-Button 8</textarea>
+            <button class="button" onclick="copyToClipboard('div3')">Button 6</button>
+            <div id="div3" class="contenteditable-div" contenteditable hidden>
+                <p>&bull; Hello over there</p>
+<p><strong>bdkjfedfkljed</strong></p>
+            </div>
         </div>
         <div>
-            <button class="button" onclick="copyToClipboard('textarea9')">Button 9</button>
-            <textarea id="textarea9" rows="4" cols="50" hidden>
-Button 9</textarea>
+            <button class="button" onclick="copyToClipboard('div3')">Button 7</button>
+            <div id="div3" class="contenteditable-div" contenteditable hidden>
+                <p>&bull; Hello over there</p>
+<p><strong>bdkjfedfkljed</strong></p>
+            </div>
         </div>
-              <div>
-            <button class="button" onclick="copyToClipboard('textarea10')">Button 10</button>
-            <textarea id="textarea10" rows="4" cols="50" hidden>
-Button 10</textarea>
+        <div>
+            <button class="button" onclick="copyToClipboard('div3')">Button 8</button>
+            <div id="div3" class="contenteditable-div" contenteditable hidden>
+                <p>&bull; Hello over there</p>
+<p><strong>bdkjfedfkljed</strong></p>
+            </div>
+        </div>
+        <div>
+            <button class="button" onclick="copyToClipboard('div3')">Button 9</button>
+            <div id="div3" class="contenteditable-div" contenteditable hidden>
+                <p>&bull; Hello over there</p>
+<p><strong>bdkjfedfkljed</strong></p>
+            </div>
+        </div>
+        <div>
+            <button class="button" onclick="copyToClipboard('div3')">Button 10</button>
+            <div id="div3" class="contenteditable-div" contenteditable hidden>
+                <p>&bull; Hello over there</p>
+<p><strong>bdkjfedfkljed</strong></p>
+            </div>
         </div>
     </div>
 </body>
